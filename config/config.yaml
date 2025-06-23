@@ -1,0 +1,6 @@
+project_name: Gimbr
+log_level: INFO
+random_seed: 42
+data_directory: ./data/
+model_directory: ./models/trained/
+dashboard_port: 8050

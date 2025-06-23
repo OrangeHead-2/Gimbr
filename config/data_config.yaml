@@ -1,0 +1,18 @@
+raw_data_sources:
+  bridges: https://data.transportation.gov/api/views/xyz/rows.csv
+  weather: https://www.ncdc.noaa.gov/cdo-web/api/v2/data
+  maintenance: https://data.gov/api/infra-maintenance.csv
+external_data:
+  usgs: https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.csv
+columns:
+  id: structure_id
+  date: inspection_date
+  features:
+    - avg_daily_traffic
+    - bridge_condition
+    - avg_temp
+    - precipitation
+    - corrosion_level
+    - previous_failures
+    - soil_type
+    - region_code
