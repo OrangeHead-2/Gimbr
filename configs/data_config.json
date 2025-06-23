@@ -1,0 +1,21 @@
+{
+  "data": {
+    "source": "opendata",
+    "download_url": "https://data.transportation.gov/resource/bridges.csv",
+    "raw_path": "data/raw/bridges.csv",
+    "processed_path": "data/processed/features.csv",
+    "dvc_tracking": true,
+    "feature_engineering_steps": [
+      "add_traffic_features",
+      "add_env_features",
+      "normalize"
+    ],
+    "label_column": "failure_within_1yr",
+    "train_test_split": {
+      "test_size": 0.2,
+      "stratify": true,
+      "random_state": 42
+    },
+    "drift_reference_path": "data/processed/infra_training.csv"
+  }
+}

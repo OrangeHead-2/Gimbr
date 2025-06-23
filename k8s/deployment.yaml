@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gimbr-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gimbr-api
+  template:
+    metadata:
+      labels:
+        app: gimbr-api
+    spec:
+      containers:
+      - name: gimbr-api
+        image: "YOUR_DOCKER_REGISTRY/gimbr-app:latest"
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MODEL_PATH
+          value: "models/trained/model.joblib"
+        - name: SECRET
+          valueFrom:
+            secretKeyRef:
+              name: gimbr-secrets
+              key: secret
+        - name: SENTRY_DSN
+          valueFrom:
+            secretKeyRef:
+              name: gimbr-secrets
+              key: sentry_dsn
+        resources:
+          limits:
+            cpu: "1"
+            memory: "2Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gimbr-api-service
+spec:
+  selector:
+    app: gimbr-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer

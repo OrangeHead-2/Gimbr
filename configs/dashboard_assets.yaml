@@ -1,0 +1,83 @@
+dashboard:
+  theme:
+    primary_color: "#3867d6"
+    secondary_color: "#f7b731"
+    background_color: "#f5f6fa"
+    font_family: "Roboto, Arial, sans-serif"
+    logo_path: "assets/logo.png"
+    favicon_path: "assets/favicon.ico"
+  layout:
+    header:
+      show_logo: true
+      title: "Bridge Failure Prediction Dashboard"
+      show_nav: true
+    sidebar:
+      show: true
+      menu_items:
+        - name: "Overview"
+          icon: "mdi-view-dashboard"
+        - name: "Predictions"
+          icon: "mdi-chart-bar"
+        - name: "Data Drift"
+          icon: "mdi-chart-line"
+        - name: "Model Metrics"
+          icon: "mdi-clipboard-check"
+        - name: "Alerts"
+          icon: "mdi-bell"
+        - name: "Settings"
+          icon: "mdi-cog"
+    footer:
+      text: "© 2025 BridgeML"
+      links:
+        - name: "GitHub"
+          url: "https://github.com/yourorg/yourrepo"
+        - name: "Docs"
+          url: "https://yourorg.github.io/yourrepo"
+  components:
+    cards:
+      - id: "failure_rate"
+        type: "metric"
+        title: "Current Failure Rate"
+        icon: "mdi-alert"
+      - id: "total_structures"
+        type: "metric"
+        title: "Total Structures"
+        icon: "mdi-domain"
+      - id: "recent_alerts"
+        type: "alert_list"
+        title: "Recent Alerts"
+    charts:
+      - id: "failure_probability_hist"
+        type: "histogram"
+        title: "Failure Probability Distribution"
+        data_source: "predictions"
+      - id: "drift_score_trend"
+        type: "line"
+        title: "Drift Score Over Time"
+        data_source: "drift_metrics"
+      - id: "feature_importance"
+        type: "bar"
+        title: "Feature Importance"
+        data_source: "model_metrics"
+    tables:
+      - id: "prediction_table"
+        type: "data_table"
+        title: "Latest Predictions"
+        columns: ["structure_id", "failure_probability", "region", "scoring_date"]
+        data_source: "predictions"
+      - id: "alert_table"
+        type: "data_table"
+        title: "Alert Log"
+        columns: ["timestamp", "type", "message"]
+        data_source: "alerts"
+  assets:
+    - path: "assets/logo.png"
+      type: "image/png"
+    - path: "assets/favicon.ico"
+      type: "image/x-icon"
+    - path: "assets/custom.css"
+      type: "text/css"
+    - path: "assets/dashboard.js"
+      type: "application/javascript"
+    - path: "assets/roboto-font.css"
+      type: "text/css"

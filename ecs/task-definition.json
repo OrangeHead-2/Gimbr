@@ -1,0 +1,34 @@
+{
+  "family": "gimbr-api",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "gimbr-api",
+      "image": "YOUR_AWS_ACCOUNT_ID.dkr.ecr.REGION.amazonaws.com/gimbr-app:latest",
+      "cpu": 512,
+      "memory": 1024,
+      "essential": true,
+      "portMappings": [
+        { "containerPort": 8080, "hostPort": 8080 }
+      ],
+      "environment": [
+        { "name": "MODEL_PATH", "value": "models/trained/model.joblib" },
+        { "name": "SECRET", "value": "YOUR_SECRET" },
+        { "name": "SENTRY_DSN", "value": "YOUR_SENTRY_DSN" }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/gimbr-api",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "requiresCompatibilities": [ "FARGATE" ],
+  "cpu": "512",
+  "memory": "1024",
+  "executionRoleArn": "arn:aws:iam::YOUR_AWS_ACCOUNT_ID:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::YOUR_AWS_ACCOUNT_ID:role/ecsTaskRole"
+}

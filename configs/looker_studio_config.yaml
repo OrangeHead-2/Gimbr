@@ -1,0 +1,14 @@
+looker:
+  dataset: bridge_failure_predictions
+  upload_method: google_sheets
+  google_sheet_url: "https://docs.google.com/spreadsheets/d/your-sheet-id"
+  update_frequency: daily
+  fields:
+    - structure_id
+    - failure_probability
+    - region
+    - scoring_date
+  dashboard:
+    - chart: "Failure Probability by Region"
+    - chart: "Data Drift Over Time"
+    - table: "Raw Predictions"

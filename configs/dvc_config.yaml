@@ -1,0 +1,15 @@
+core:
+  remote: myremote
+
+remotes:
+  myremote:
+    url: s3://mybucket/dvcstore
+    access_key_id: ${AWS_ACCESS_KEY_ID}
+    secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+
+state:
+  type: database
+  database: dvc.db
+
+cache:
+  dir: .dvc/cache

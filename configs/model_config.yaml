@@ -1,0 +1,24 @@
+model:
+  name: bridge_failure_rf
+  type: RandomForestClassifier
+  parameters:
+    n_estimators: 200
+    max_depth: 8
+    min_samples_split: 4
+    min_samples_leaf: 2
+    random_state: 42
+  features:
+    - avg_daily_traffic
+    - year_built
+    - structure_material
+    - env_score
+    - length
+    - width
+    - traffic_bin
+    - soil_score
+  target: failure_within_1yr
+  quantization: true
+  export_onnx: true
+  registry:
+    use_mlflow: true
+    stage_on_register: Production

@@ -1,0 +1,13 @@
+{
+  "slack": {
+    "webhook_url": "${SLACK_WEBHOOK_URL}",
+    "default_channel": "#ml-alerts",
+    "username": "Bridge Failure Bot",
+    "icon_emoji": ":bridge_at_night:",
+    "alert_thresholds": {
+      "roc_auc_drop": 0.05,
+      "drift_detected": true,
+      "batch_scoring_failed": true
+    }
+  }
+}

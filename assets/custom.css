@@ -1,0 +1,45 @@
+body {
+  background-color: #f5f6fa;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.header {
+  background: #3867d6;
+  color: #fff;
+  padding: 1rem;
+}
+
+.sidebar {
+  background: #fff;
+  border-right: 1px solid #e6e6e6;
+}
+
+.card-metric {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(56,103,214,0.12);
+  padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-metric .icon {
+  color: #3867d6;
+  font-size: 2rem;
+}
+
+.chart-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(56,103,214,0.08);
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.footer {
+  font-size: 0.95rem;
+  color: #888;
+  padding: 1rem;
+  text-align: center;
+  background: #fafbfc;
+  border-top: 1px solid #e6e6e6;
+}

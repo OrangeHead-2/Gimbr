@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'bridge_failure_api'
+    static_configs:
+      - targets: ['localhost:8000']
+
+  - job_name: 'batch_scoring_job'
+    static_configs:
+      - targets: ['localhost:9090']
