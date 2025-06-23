@@ -206,8 +206,6 @@ MIT
 ---
 
 ## Maintainers
-
-- [yourorg](https://github.com/yourorg)
 - [OrangeHead-2](https://github.com/OrangeHead-2)
 
 ---
