@@ -1,4 +1,4 @@
-# Bridge Failure Prediction Platform
+# Gimbr - Bridge Failure Prediction Platform
 
 A full-stack, production-grade ML system for predicting bridge failure risk, featuring robust data pipelines, model training and monitoring, CI/CD, cloud deployment, and modern dashboard UIs.
 
